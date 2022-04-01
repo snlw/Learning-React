@@ -29,3 +29,4 @@
   - Solution : Move React App folder into **/mnt/wsl/** instead of the usual **/mnt/c/Users/%USER%/...**
   - There is **NO** need to run the app with configurations FAST_REFRESH=true and CHOKIDAR_USEPOLLING=true.
   - Other suggestions include downgrading the react-scripts from 5.0.0 to 4.0.3 (Did not test)
+  - **NOTE** : Running the app in the wsl folder seems to solve the hot-reload issue, however, please save your local dev work in the C drive (**/mnt/c/Users/%USER%/...**) or commit your changes to Git. Rebooting of the computer and opening a new instance of WSL2 seems to create a new /mnt/wsl folder which will cause your previous work to be overwritten. Closing the terminal and rebooting the terminal does not seem to cause this issue. So just take note before shut down.
