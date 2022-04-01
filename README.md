@@ -11,6 +11,14 @@
 
 `cd tutorial-app`
 
+## JSX Example
+```jsx
+<div
+  className = 'jsx-example'
+  style = {{background : 'white'}}
+  onClick = {{() => alert('Hello World')}}>
+```
+
 ### Commands
 - `npm start`
   - Starts the development server
@@ -22,11 +30,10 @@
   - Removes this tool and copies build dependencies, configuration files and scripts into the app directory.
 
 
-## Big Tips
+## Tips
 ### For Windows Users who prefer to use WSL2.
 - Purpose : To enable Hot Reload (while your application is running, you can make changes to the code and apply them to the running application [Link](https://blog.jetbrains.com/dotnet/2021/12/02/how-rider-hot-reload-works-under-the-hood/#:~:text=let's%20dive%20in!-,What%20does%20Hot%20Reload%20do%3F,your%20application%20is%20kept%20intact.))
   - Reason : WSL2 changed the file sharing protocol, from using their own custom developed protocol using the 9P protocol, which does not support file changes event for Create React App. [Link](https://github.com/facebook/create-react-app/issues/10253)
-  - Solution : Move React App folder into **/mnt/wsl/** instead of the usual **/mnt/c/Users/%USER%/...**
+  - Solution : Move React App folder into **/home/%USER%** instead of **/mnt/c/Users/%USER%/...**
   - There is **NO** need to run the app with configurations FAST_REFRESH=true and CHOKIDAR_USEPOLLING=true.
   - Other suggestions include downgrading the react-scripts from 5.0.0 to 4.0.3 (Did not test)
-  - **NOTE** : Running the app in the wsl folder seems to solve the hot-reload issue, however, please save your local dev work in the C drive (**/mnt/c/Users/%USER%/...**) or commit your changes to Git. Rebooting of the computer and opening a new instance of WSL2 seems to create a new /mnt/wsl folder which will cause your previous work to be overwritten. Closing the terminal and rebooting the terminal does not seem to cause this issue. So just take note before shut down.
