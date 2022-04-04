@@ -1,12 +1,15 @@
 import React from 'react';
+// ReactDOM is a library that provides interaction with the DOM layer of the browser.
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import {FunctionalApp, ClassApp} from './App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
+  // StrictMode helps to spot potential errors in advance.
+  // It performs code checks only during development time and it does not work in the production run.
   <React.StrictMode>
-    <App />
+    <ClassApp />
   </React.StrictMode>,
   document.getElementById('root')
 );
