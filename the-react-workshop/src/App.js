@@ -2,6 +2,7 @@
 import {React, Component} from 'react';
 
 import Greeting from "./components/Greeting";
+import InventoryItem from './components/BuyStuff';
 
 const FunctionalApp = () => (
   <div>
@@ -37,9 +38,28 @@ class ClassApp extends Component {
     </div>
     )
   };
+};
+
+class BuyStuffApp extends Component {
+  constructor(props) {
+    super(props);
+    this.title = "BuyStuff";
+  };
+
+  render() {
+    return (
+      <div>
+      <h1>{this.title}</h1>
+      <InventoryItem itemName="Shoe" itemQuantity="5" />
+      <InventoryItem itemName="Sock" itemQuantity="3" />
+    </div>
+    )
+  };
+
 }
 
 export {
   FunctionalApp,
-  ClassApp
+  ClassApp,
+  BuyStuffApp
 };
