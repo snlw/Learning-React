@@ -5,15 +5,16 @@ import './index.css';
 import {
   FunctionalApp, 
   ClassApp,
-  BuyStuffApp} from './App';
-import LoginApp from './LoginApp';
+  BuyStuffApp} from './apps/App';
+import LoginApp from './apps/LoginApp';
+import BlogApp from './apps/BlogApp';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   // StrictMode helps to spot potential errors in advance.
   // It performs code checks only during development time and it does not work in the production run.
   <React.StrictMode>
-    <LoginApp />
+    <BlogApp />
   </React.StrictMode>,
   document.getElementById('root')
 );
