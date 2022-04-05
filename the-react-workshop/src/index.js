@@ -3,18 +3,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import {
-  FunctionalApp, 
-  ClassApp,
-  BuyStuffApp} from './apps/App';
-import LoginApp from './apps/LoginApp';
-import BlogApp from './apps/BlogApp';
+  // FunctionalApp, 
+  // ClassApp,
+  // BuyStuffApp,
+  ConditionalRenderingApp} from './apps/App';
+// import LoginApp from './apps/LoginApp';
+// import BlogApp from './apps/BlogApp';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   // StrictMode helps to spot potential errors in advance.
   // It performs code checks only during development time and it does not work in the production run.
   <React.StrictMode>
-    <BlogApp />
+    <ConditionalRenderingApp />
   </React.StrictMode>,
   document.getElementById('root')
 );
