@@ -30,7 +30,6 @@
 - `npm run eject`
   - Removes this tool and copies build dependencies, configuration files and scripts into the app directory.
 
-
 ## Tips
 ### React
 1. Relative imports outside of src/ are not supported.
@@ -69,6 +68,25 @@ Overview of the component lifecycle
   ```js
   componentWillUnmount()
   ```
+
+### Hooks
+1. `setState(updater, [callback])`
+- `updater` is the value being set as an object
+- `[callback]` is an optional callback function that gets called right after the value is set and the component is re-rendered.
+
+### Formik
+Formik resolves how we handle complex forms in React. (i.e. multiple embedded forms, dynamic fields and validation)
+Formik stores the form state locally and not globally.
+Advantages:
+  1. Easy to integrate.
+  2. Easy to understand.
+  3. Easy to configure.
+- `resetForm` is used to reset the form back to the initial values
+- `validateField` is used to trigger a specific field validation.
+- `setTouched` is used when we want to mark the field as touched or visited.
+- `setStatus` is used when we want to attacha custom status property to our form (i.e. isApproving, isValidating)
+- `onReset` is triggered just before the form is reset back to its initial values.
+- `validate`, `validateOnBlur`, `validateOnChange`, `validateSchema` are triggered in cases when we want to validate the form.
 
 ### For Windows Users who prefer to use WSL2.
 - Purpose : To enable Hot Reload (while your application is running, you can make changes to the code and apply them to the running application [Link](https://blog.jetbrains.com/dotnet/2021/12/02/how-rider-hot-reload-works-under-the-hood/#:~:text=let's%20dive%20in!-,What%20does%20Hot%20Reload%20do%3F,your%20application%20is%20kept%20intact.))
