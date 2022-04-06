@@ -1,0 +1,13 @@
+.container {
+    text-align : center;
+}
+
+label {
+    display : inline-block;
+    margin : 5px 0 ; 
+}
+
+.status {
+    font-size : 20px;
+    margin : 20px 0;
+}
