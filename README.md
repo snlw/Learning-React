@@ -69,10 +69,98 @@ Overview of the component lifecycle
   componentWillUnmount()
   ```
 
-### Hooks
-1. `setState(updater, [callback])`
-- `updater` is the value being set as an object
-- `[callback]` is an optional callback function that gets called right after the value is set and the component is re-rendered.
+### [Hooks](https://reactjs.org/docs/hooks-reference.html)
+1. `useState`
+  ```js
+  const [state, setState] = useState(initialState);
+  ```
+  - Returns a stateful value, and a function to update it.
+  - `setState(newState)` is used to update the state.
+
+2. `useEffect`
+  - Accepts a function that contains imperative, possibly effectful code.
+  - The function passed to useEffect will run after the render is committed to the screen
+  ```js
+    useEffect(() => {
+      const subscription = props.source.subscribe();
+        return () => {
+          // Clean up the subscription
+          subscription.unsubscribe();
+        };
+      });
+  ```
+  - For conditional firing of effects, pass a second argument which is the array of values that changes.
+  ```js
+    useEffect(() => {
+      const subscription = props.source.subscribe();
+        return () => {
+          // Clean up the subscription
+          subscription.unsubscribe();
+        };
+      },
+      [valuesThatChange]);
+  ```
+
+3. `useContext`
+  - Accepts a context object (the value returned from React.createContext) and returns the current context value for that context
+  - A component calling useContext will always re-render when the context value changes
+  - Refer to `./the-react-workshop/apps/useContext.example.js`
+
+4. `useReducer`
+  ```js
+  const [state, dispatch] = useReducer(reducer, initialArg, init);
+  ```
+  - Accepts a reducer of type (state, action) => newState, and returns the current state paired with a dispatch method
+  - Refer to `./the-react-workshop/apps/useReducer.example.js`
+
+5. `useCallback`
+  ```js
+  const memoizedCallback = useCallback(() => {doSomething(a, b);},[a, b],);
+  ```
+  - Returns a memoized callback.
+  - memoization or memoisation is an optimization technique used primarily to speed up computer programs by storing the results of expensive function calls and returning the cached result when the same inputs occur again
+
+6. `useMemo`
+  ```js
+  const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
+  ```
+  - Returns a memoized value.
+  - Pass a “create” function and an array of dependencies. useMemo will only recompute the memoized value when one of the dependencies has change
+  - If no array is provided, a new value will be computed on every render.
+
+7. `useRef`
+  ```js
+  const refContainer = useRef(initialValue);
+  ```
+  - returns a mutable ref object whose .current property is initialized to the passed argument (initialValue).
+  - The returned object will persist for the full lifetime of the component.
+  - Essentially, useRef is like a “box” that can hold a mutable value in its .current property.
+
+8. `useImperativeHandle`
+  ```js
+  useImperativeHandle(ref, createHandle, [deps])
+  ```
+  - useImperativeHandle customizes the instance value that is exposed to parent components when using ref
+
+9. `useLayoutEffect`
+  - The signature is identical to useEffect, but it fires synchronously after all DOM mutations. 
+  - Use this to read layout from the DOM and synchronously re-render.
+  - Prefer the standard useEffect when possible to avoid blocking visual updates.
+
+10. `useTransition`
+  ```js
+  const [isPending, startTransition] = useTransition();
+  ```
+  - Returns a stateful value for the pending state of the transition, and a function to start it.
+
+11. `useId`
+  ```js
+  const [isPending, startTransition] = useTransition();
+  ```
+  - A hook for generating unique IDs that are stable across the server and client, while avoiding hydration mismatches.
+
+
+
 
 ### Formik
 Formik resolves how we handle complex forms in React. (i.e. multiple embedded forms, dynamic fields and validation)
