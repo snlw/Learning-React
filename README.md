@@ -4,6 +4,7 @@
 ### Youtube
 1. [React Tutorials](https://www.youtube.com/watch?v=OxIDLw0M-m0&list=PL4cUxeGkcC9ij8CfkAY2RAGb-tmkNwQHG)
 2. [Best Practices](https://www.youtube.com/watch?v=5r4LlVAFrd0)
+3. [React Antipatterns](https://www.youtube.com/watch?v=b0IZo2Aho9Y)
 
 ### Others
 1. [Official Documentation](https://reactjs.org/docs/getting-started.html)
@@ -213,7 +214,7 @@ const App = () => {
 
 3. `useState(object)` or `useState(atom)` ? [Article](https://blog.thoughtspile.tech/2021/10/11/usestate-object-vs-multiple/)
   - Consider only grouping closely related state items into an object. 
-  - Benefits of using useState on atomic states reduces the bundle size, and allow cleaner hooks to be used for a specific state.
+  - Benefits of using useState on atomic states reduces the bundle size, and allow custom hooks to be used for a specific state.
 
 4. Type Checking using PropTypes.
 ```js
@@ -223,6 +224,59 @@ DisplayDetails.PropTypes ={
   isMarried : PropTypes.bool
 };
 ```
+5. Define Child Component outside of the Parent Component and pass function in as a prop
+```js
+const Child = ({onClick}) => {
+  return <button onClick={onClick}>+</button>
+}
+```
+
+6. Memoization `useMemo()`
+```js
+const profit = () => {
+  const [profit, setProfit] = useState(0);
+  const [numberOfStocks, setNumberOfStocks] = useState(0);
+
+  // expensiveCalculation only runs when the dependent data changes.
+  const total = useMemo(() => expensiveCalculation(numberOfStocks), [numberOfStocks])
+}
+```
+
+7. One Component per directory.
+```
+src
+|-- NavBar
+    |-- index.tsx
+    |-- NavBar.css
+    |-- NavBar.tsx
+```
+  - `index.tsx` should contain `export {default} from './NavBar'`.
+  - We can then import NavBar from the directory `import NavBar from './NavBar'`
+
+8. [Dynamic Importing(https://reactjs.org/docs/code-splitting.html)]
+```js
+const Button = React.lazy(()=> import('./Button'))
+```
+
+9. Handling multiple props
+```js
+const data = {
+  name : 'Sean',
+  age : 27,
+  email : 'email@email.com',
+  hasDog : false
+};
+
+<User {...data} />
+```
+
+10. Currying 
+```js
+const handleIt = (n) => {
+  return (e) => console.log(e,v)
+}
+```
+- The "[currying](https://stackoverflow.com/questions/36314/what-is-currying#:~:text=The%20%22currying%22%20is%20the%20process,function%2C%20return%20the%20actual%20result.)" is the process of taking the function of multiple arguments and converting it into a serious of functions that each take a single argument and return a function of a single argument, or in the case of the final function, return the actual result.
 
 ### For Windows Users who prefer to use WSL2.
 - Purpose : To enable Hot Reload (while your application is running, you can make changes to the code and apply them to the running application [Link](https://blog.jetbrains.com/dotnet/2021/12/02/how-rider-hot-reload-works-under-the-hood/#:~:text=let's%20dive%20in!-,What%20does%20Hot%20Reload%20do%3F,your%20application%20is%20kept%20intact.))
