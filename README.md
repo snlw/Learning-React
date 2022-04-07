@@ -1,11 +1,15 @@
 # Learning-React
 
 ## Resources 
-1. [Youtube](https://www.youtube.com/watch?v=OxIDLw0M-m0&list=PL4cUxeGkcC9ij8CfkAY2RAGb-tmkNwQHG)
-2. [Official Documentation](https://reactjs.org/docs/getting-started.html)
-3. [Interview Questions](https://www.toptal.com/react/interview-questions)
-4. [React Typescript Cheat Sheet](https://react-typescript-cheatsheet.netlify.app/docs/basic/setup)
-5. [The React Workshop](https://www.nlb.gov.sg/biblio/205442480)
+### Youtube
+1. [React Tutorials](https://www.youtube.com/watch?v=OxIDLw0M-m0&list=PL4cUxeGkcC9ij8CfkAY2RAGb-tmkNwQHG)
+2. [Best Practices](https://www.youtube.com/watch?v=5r4LlVAFrd0)
+
+### Others
+1. [Official Documentation](https://reactjs.org/docs/getting-started.html)
+2. [Interview Questions](https://www.toptal.com/react/interview-questions)
+3. [React Typescript Cheat Sheet](https://react-typescript-cheatsheet.netlify.app/docs/basic/setup)
+4. [The React Workshop](https://www.nlb.gov.sg/biblio/205442480)
 
 ## Create React App 
 `npx create-react-app tutorial-app`
@@ -175,6 +179,50 @@ Advantages:
 - `setStatus` is used when we want to attacha custom status property to our form (i.e. isApproving, isValidating)
 - `onReset` is triggered just before the form is reset back to its initial values.
 - `validate`, `validateOnBlur`, `validateOnChange`, `validateSchema` are triggered in cases when we want to validate the form.
+
+### Best Practices
+1. Prevent unnecessary renders of other components by initializing state locally in the component.
+```js
+const App = () => {
+  return(
+    <div className='App'>
+      <ChangeColor />
+      <DummyChildComponent />
+    </div>
+  )
+};
+```
+  - State updates in ChangeColor does not re-render DummyChildComponent.
+
+2. Prevent adding unnecessary nodes into the DOM by using [Fragments](https://reactjs.org/docs/fragments.html).
+  - Syntax : 
+```js
+    <React.Fragment>
+      <ChangeColor />
+      <DummyChildComponent />
+    </React.Fragment>
+```
+  - Fragments declared with the explicit <React.Fragment> syntax may have keys.
+  - Short Syntax :
+```js
+    <>
+      <ChangeColor />
+      <DummyChildComponent />
+    </>
+```
+
+3. `useState(object)` or `useState(atom)` ? [Article](https://blog.thoughtspile.tech/2021/10/11/usestate-object-vs-multiple/)
+  - Consider only grouping closely related state items into an object. 
+  - Benefits of using useState on atomic states reduces the bundle size, and allow cleaner hooks to be used for a specific state.
+
+4. Type Checking using PropTypes.
+```js
+DisplayDetails.PropTypes ={
+  name : PropTypes.string,
+  age : PropTypes.number,
+  isMarried : PropTypes.bool
+};
+```
 
 ### For Windows Users who prefer to use WSL2.
 - Purpose : To enable Hot Reload (while your application is running, you can make changes to the code and apply them to the running application [Link](https://blog.jetbrains.com/dotnet/2021/12/02/how-rider-hot-reload-works-under-the-hood/#:~:text=let's%20dive%20in!-,What%20does%20Hot%20Reload%20do%3F,your%20application%20is%20kept%20intact.))

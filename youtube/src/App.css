@@ -1,0 +1,12 @@
+.App {
+  display:block;
+  text-align:center;
+}
+
+h1 {
+  font-size: 100px;
+}
+
+button {
+  font-size: 30px;
+}
