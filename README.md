@@ -11,6 +11,7 @@
 2. [Interview Questions](https://www.toptal.com/react/interview-questions)
 3. [React Typescript Cheat Sheet](https://react-typescript-cheatsheet.netlify.app/docs/basic/setup)
 4. [The React Workshop](https://www.nlb.gov.sg/biblio/205442480)
+5. [Recoil](https://recoiljs.org/docs/introduction/installation)
 
 ## Create React App 
 `npx create-react-app tutorial-app`
@@ -25,7 +26,7 @@
   onClick = {{() => alert('Hello World')}}>
 ```
 
-### Commands
+## Commands
 - `npm start`
   - Starts the development server
 - `npm run build`
@@ -41,7 +42,6 @@
 2. Class names of div (with styles specified in css) should not contain '-' as concatenation. It should use " ", else the div will not render.
 
 ### React Lifecycle
-Overview of the component lifecycle
 1. The initial mount lifecycle
   - This is when React attempts to build the component before pushing it into the DOM.
   - The mount lifecycle is called twice: before and immediately after React renders the component into the DOM.
@@ -163,9 +163,6 @@ Overview of the component lifecycle
   const [isPending, startTransition] = useTransition();
   ```
   - A hook for generating unique IDs that are stable across the server and client, while avoiding hydration mismatches.
-
-
-
 
 ### Formik
 Formik resolves how we handle complex forms in React. (i.e. multiple embedded forms, dynamic fields and validation)
