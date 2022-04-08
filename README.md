@@ -7,9 +7,10 @@
 4. [[Documentation] React](https://reactjs.org/docs/getting-started.html)
 5. [[Documentation] Recoil](https://recoiljs.org/docs/introduction/installation)
 6. [[Documentation] Jest](https://jestjs.io/docs/getting-started)
-7. [[Interview] Questions](https://www.toptal.com/react/interview-questions)
-8. [[Miscellaneous] React Typescript Cheat Sheet](https://react-typescript-cheatsheet.netlify.app/docs/basic/setup)
-9. [[Textbook] The React Workshop](https://www.nlb.gov.sg/biblio/205442480)
+7. [[Documentation] Styled Components](https://styled-components.com/docs)
+8. [[Interview] Questions](https://www.toptal.com/react/interview-questions)
+9. [[Miscellaneous] React Typescript Cheat Sheet](https://react-typescript-cheatsheet.netlify.app/docs/basic/setup)
+10. [[Textbook] The React Workshop](https://www.nlb.gov.sg/biblio/205442480)
 
 ## JSX
 ```jsx
