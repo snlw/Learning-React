@@ -1,24 +1,17 @@
 # Learning-React
 
 ## Resources 
-### Youtube
-1. [React Tutorials](https://www.youtube.com/watch?v=OxIDLw0M-m0&list=PL4cUxeGkcC9ij8CfkAY2RAGb-tmkNwQHG)
-2. [Best Practices](https://www.youtube.com/watch?v=5r4LlVAFrd0)
-3. [React Antipatterns](https://www.youtube.com/watch?v=b0IZo2Aho9Y)
+1. [[Youtube] React Tutorials](https://www.youtube.com/watch?v=OxIDLw0M-m0&list=PL4cUxeGkcC9ij8CfkAY2RAGb-tmkNwQHG)
+2. [[Youtube] Best Practices](https://www.youtube.com/watch?v=5r4LlVAFrd0)
+3. [[Youtube] React Antipatterns](https://www.youtube.com/watch?v=b0IZo2Aho9Y)
+4. [[Documentation] React](https://reactjs.org/docs/getting-started.html)
+5. [[Documentation] Recoil](https://recoiljs.org/docs/introduction/installation)
+6. [[Documentation] Jest](https://jestjs.io/docs/getting-started)
+7. [[Interview] Questions](https://www.toptal.com/react/interview-questions)
+8. [[Miscellaneous] React Typescript Cheat Sheet](https://react-typescript-cheatsheet.netlify.app/docs/basic/setup)
+9. [[Textbook] The React Workshop](https://www.nlb.gov.sg/biblio/205442480)
 
-### Others
-1. [Official Documentation](https://reactjs.org/docs/getting-started.html)
-2. [Interview Questions](https://www.toptal.com/react/interview-questions)
-3. [React Typescript Cheat Sheet](https://react-typescript-cheatsheet.netlify.app/docs/basic/setup)
-4. [The React Workshop](https://www.nlb.gov.sg/biblio/205442480)
-5. [Recoil](https://recoiljs.org/docs/introduction/installation)
-
-## Create React App 
-`npx create-react-app tutorial-app`
-
-`cd tutorial-app`
-
-## JSX Example
+## JSX
 ```jsx
 <div
   className = 'jsx-example'
