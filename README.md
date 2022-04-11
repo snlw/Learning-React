@@ -12,6 +12,7 @@
 9. [[Miscellaneous] React Typescript Cheat Sheet](https://react-typescript-cheatsheet.netlify.app/docs/basic/setup)
 10. [[Textbook] The React Workshop](https://www.nlb.gov.sg/biblio/205442480)
 11. [[Medium] Mastering Drag & Drop with ReactJS"](https://engineering.datorama.com/mastering-drag-drop-with-reactjs-part-01-39bed3d40a03)
+12. [[Youtube] Drag & Drop ](https://www.youtube.com/watch?v=mbihHtIy67o&t=89s)
 
 ## JSX
 ```jsx
