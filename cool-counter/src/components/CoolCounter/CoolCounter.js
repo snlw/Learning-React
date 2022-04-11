@@ -14,9 +14,25 @@ const CoolCounter = () => {
 
     return (
         <div className="CoolCounter">
-            <button onClick={(e) => updateValue(e, true)}>+</button>
+            <button 
+                onClick={(e) => updateValue(e, false)} 
+                style={{
+                    fontSize : "50px", 
+                    paddingRight : "10%",
+                    background : "transparent",
+                    border : "transparent",
+                    color : "#6c6c6c",
+                    }}>-</button>
             <Tracker value={value} />
-            <button onClick={(e) => updateValue(e, false)}>-</button>
+            <button 
+                onClick={(e) => updateValue(e, true)} 
+                style={{
+                    fontSize : "50px", 
+                    paddingLeft : "10%",
+                    background : "transparent",
+                    border : "transparent",
+                    color : "#6c6c6c"
+                    }}>+</button>
         </div>
     )
 };
