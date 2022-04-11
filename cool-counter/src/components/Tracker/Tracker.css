@@ -1,0 +1,8 @@
+.Tracker {
+    height : 100px;
+    width : 100px;
+    border-radius: 50%;;
+    background: pink;
+    text-align : center;
+    font-size : 30px;
+}
