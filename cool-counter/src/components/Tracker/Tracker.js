@@ -1,9 +1,23 @@
 import './Tracker.css';
+import React, {useEffect, useState} from 'react';
 
-const Tracker = (props) => {
+const initialValue = 0;
+
+const Tracker = () => {
+
+    const [value, setValue] = useState(initialValue);
+
+    const handleDrag = (event) => {
+        const currentValue = value;
+        console.log(event.clientY);
+        setValue(currentValue + 1);
+    };
+
     return (
-        <div className='Tracker'>
-            <p>{props.value}</p>
+        <div 
+            className='Tracker'
+            onDragStart={handleDrag}>
+            <p>{value}</p>
         </div>
     )
 };
