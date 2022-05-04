@@ -13,6 +13,8 @@
 10. [[Textbook] The React Workshop](https://www.nlb.gov.sg/biblio/205442480)
 11. [[Medium] Mastering Drag & Drop with ReactJS"](https://engineering.datorama.com/mastering-drag-drop-with-reactjs-part-01-39bed3d40a03)
 12. [[Youtube] Drag & Drop ](https://www.youtube.com/watch?v=mbihHtIy67o&t=89s)
+13. [[Documentation] Vite](https://vitejs.dev/guide/#scaffolding-your-first-vite-project)
+14. [[Medium] Vite over CRA](https://medium.com/codex/you-should-choose-vite-over-cra-for-react-apps-heres-why-47e2e7381d13)
 
 ## JSX
 ```jsx
@@ -270,6 +272,38 @@ const handleIt = (n) => {
 }
 ```
 - The "[currying](https://stackoverflow.com/questions/36314/what-is-currying#:~:text=The%20%22currying%22%20is%20the%20process,function%2C%20return%20the%20actual%20result.)" is the process of taking the function of multiple arguments and converting it into a serious of functions that each take a single argument and return a function of a single argument, or in the case of the final function, return the actual result.
+
+### Vite
+An option over create-react-app is using Vite.
+
+`npm init vite@latest my-react-app --template react`
+
+Vite is faster (in terms of start-time and spinning a dev server) for large-scale projects because of bundling method (esbuild vs webpack in create-react-app) :heavy_check_mark:
+
+1. Remove need to `import React from 'react'` in every JSX file. 
+    
+    `npm install --save-dev vite-preset-react`
+    ```js
+    import {defaultConfig} from "vite";
+    import react from "vite-react-preset";
+    export default defineConfig({
+      plugins : [react()],
+    })
+    ```
+2. Allow import of SVG files
+    `npm install --save-dev vite-plugin-svgr`
+    ```js
+    import {defaultConfig} from "vite";
+    import react from "vite-react-preset";
+    import svgr from "vite-plugin-svgr";
+    export default defineConfig({
+      plugins : [react(), svgr()],
+    })
+    ```
+
+
+
+
 
 ### For Windows Users who prefer to use WSL2.
 - Purpose : To enable Hot Reload (while your application is running, you can make changes to the code and apply them to the running application [Link](https://blog.jetbrains.com/dotnet/2021/12/02/how-rider-hot-reload-works-under-the-hood/#:~:text=let's%20dive%20in!-,What%20does%20Hot%20Reload%20do%3F,your%20application%20is%20kept%20intact.))
